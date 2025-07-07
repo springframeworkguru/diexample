@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by jt, Spring Framework Guru.
  */
 @Component
-@Profile("!spanish")
+@Profile("!spanish & !polish")
 public class DIDataStore implements DataStore {
     private String user;
     private String password;

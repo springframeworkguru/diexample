@@ -11,3 +11,12 @@ with the profile of "spanish". Update the class `DiDataStore` with the profile n
 
 Add a unit test to verify the controller DiController returns "hello world" in Spanish when the "spanish" profile is
 active. Use a SpringBootTest, do not use mocks for this test.
+
+# Assignment: Create New Profile
+## Junie
+In the package `guru.springframework.diexample.database`, examine the class `DiDataStore`. Based on this class
+create a new class called `PolishDiDataStore` which returns "hello world" in Polish. Annotate the new class
+with the profile of "polish". Update the class `DiDataStore` and add the profile not equal to "polish".
+
+Add a unit test to verify the controller DiController returns "hello world" in Polish when the "polish" profile is
+active. Use a SpringBootTest, do not use mocks for this test.
