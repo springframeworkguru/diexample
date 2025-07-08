@@ -6,6 +6,8 @@ import guru.springframework.diexample.repositories.DiRepoImpl;
 import guru.springframework.diexample.repositories.Repo;
 import guru.springframework.diexample.service.DiService;
 import guru.springframework.diexample.service.DiServiceImpl;
+import guru.springframework.diexample.service.EmailService;
+import guru.springframework.diexample.service.SmsService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +36,11 @@ public class MimicSpringContextTest {
         addBean("repo", new DiRepoImpl(
                 (DataStore) getBean("dataStore")
         ));
-        addBean("diService", new DiServiceImpl((Repo) getBean("repo")));
+        addBean("emailService", new EmailService());
+        addBean("smsService", new SmsService());
+        addBean("diService", new DiServiceImpl((Repo) getBean("repo"), 
+                (EmailService) getBean("emailService"), 
+                (SmsService) getBean("smsService")));
         addBean("diController", new DiController((DiService) getBean("diService")));
     }
 

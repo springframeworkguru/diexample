@@ -7,6 +7,8 @@ import guru.springframework.diexample.repositories.DiRepoImpl;
 import guru.springframework.diexample.repositories.Repo;
 import guru.springframework.diexample.service.DiService;
 import guru.springframework.diexample.service.DiServiceImpl;
+import guru.springframework.diexample.service.EmailService;
+import guru.springframework.diexample.service.SmsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +25,7 @@ class DiControllerTest {
     void setUp() {
         diDataStore = new DIDataStore("testUser", "testPassword", "testUrl");
         diRepo = new DiRepoImpl(diDataStore);
-        diService = new DiServiceImpl(diRepo);
+        diService = new DiServiceImpl(diRepo, new EmailService(), new SmsService());
         diController = new DiController(diService);
     }
 
