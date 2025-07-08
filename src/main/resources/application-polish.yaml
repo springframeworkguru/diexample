@@ -1,0 +1,5 @@
+guru:
+  sfg:
+    user: polish_user
+    password: polish_password
+    url: jdbc:mysql://localhost:3306/polish_db
